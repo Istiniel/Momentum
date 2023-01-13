@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="quotes.json" />
+  <link rel="stylesheet" href="node_modules/icono/dist/icono.min.css">
+  <title>momentum</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="player-container">
+      <div class="audio-player">
+        <div class="timeline">
+          <div class="progress"></div>
+        </div>
+        <div class="controls">
+          <div class="player-buttons">
+            <div class="audio-prev" style="transform: scale(0.7);">
+              <div class="icono-caretLeft">
+              </div>
+            </div>
+            <div class="play-container">
+              <div class="toggle-play play">
+              </div>
+            </div>
+            <div class="audio-next" style="transform: scale(0.7);">
+              <div class="icono-caretRight">
+              </div>
+            </div>
+          </div>
+          <div class="song-time">
+            <div class="current">0:00</div>
+            <div class="divider">/</div>
+            <div class="length">1:44</div>
+          </div>
+          <div class="song-name">Music Song</div>
+          <div class="volume-container">
+            <div class="volume-button">
+              <div class="volume icono-volumeMedium"></div>
+            </div>
+            <div class="volume-slider">
+              <div class="volume-percentage"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="play-list"></ul>
+    </div>
+
+    <div class="weather">
+      <input type="text" class="city" value="Minsk" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button id="sln" class="slide-next slider-icon"></button>
+    </div>
+    <div class="time">
+      <div class="current"></div>
+      <div class="divider"></div>
+      <div class="length"></div>
+    </div>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" />
+    </div>
+  </main>
+  <footer class="footer">
+    <button class="change-quote quotes-hide"></button>
+    <div class="bottom-section">
+      <div class="bottom-section__settings">
+        <div class="settings-section">
+          <ul class="settings-section__list">
+            <li>language</li>
+            <li>background</li>
+            <li>theme</li>
+            <li>show/hide</li>
+          </ul>
+        </div>
+        <div class="settings-divider"></div>
+        <div id="test1" class="settings-section"></div>
+      </div>
+      <div id="settings" class="bottom-section__icon">
+        <div class="icono-gear">
+        </div>
+      </div>
+      <div class="bottom-section__quotes quotes-hide">
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script type="module" src="./audioplayer.js"></script>
+<script type="module" src="./index.js"></script>
+<script type="module" src="./playlist.js"></script>
+
+</html>
