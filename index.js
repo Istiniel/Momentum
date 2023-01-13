@@ -108,8 +108,8 @@ async function getWeather(languageByOptions = 'en') {
     const res = await fetch(url);
     const data = await res.json();
 
-    // let placeHolder = languageByOptions == 'en' ? '[Enter name]' : '[Ваше имя]';
-    // document.querySelector('.city').placeholder = placeHolder;
+    let placeHolder = languageByOptions == 'en' ? '[Enter name]' : '[Ваше имя]';
+    document.querySelector('.city').placeholder = placeHolder;
 
     let langSett = {
       en: {
@@ -141,8 +141,14 @@ async function getWeather(languageByOptions = 'en') {
     }
   }
 }
+function changeWeather(event) {
+  let langCurrent = Object.entries(settingListStatus.language).filter(
+    (e) => e[1] == 'active'
+  )[0][0];
+  getWeather(langCurrent);
+}
 city.textContent = 'Minsk';
-city.addEventListener('change', getWeather);
+city.addEventListener('change', changeWeather);
 
 // !qoute
 let quoteAuthor = document.querySelector('.author');
