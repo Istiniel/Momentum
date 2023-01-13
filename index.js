@@ -108,9 +108,6 @@ async function getWeather(languageByOptions = 'en') {
     const res = await fetch(url);
     const data = await res.json();
 
-    let placeHolder = languageByOptions == 'en' ? '[Enter name]' : '[Ваше имя]';
-    document.querySelector('.city').placeholder = placeHolder;
-
     let langSett = {
       en: {
         wind: `Wind speed: ${Math.floor(data.wind.speed)} m/s`,
@@ -121,6 +118,10 @@ async function getWeather(languageByOptions = 'en') {
         humidity: `Влажность: ${data.main.humidity}%`,
       },
     };
+
+    let placeHolder = languageByOptions == 'en' ? '[Enter name]' : '[Ваше имя]';
+    document.querySelector('.city').placeholder = placeHolder;
+
     let langCurrent = langSett[languageByOptions];
 
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
