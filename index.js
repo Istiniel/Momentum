@@ -108,8 +108,8 @@ async function getWeather(languageByOptions = 'en') {
     const res = await fetch(url);
     const data = await res.json();
 
-    // let placeHolder = languageByOptions == 'en' ? '[Enter name]' : '[Ваше имя]';
-    // document.querySelector('.city').placeholder = placeHolder;
+    let placeHolder = languageByOptions == 'en' ? '[Enter name]' : '[Ваше имя]';
+    document.querySelector('.city').placeholder = placeHolder;
 
     let langSett = {
       en: {
